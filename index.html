@@ -650,25 +650,38 @@
             filter: grayscale(0.2) invert(0.9) hue-rotate(120deg);
         }
 
-        /* FLOATING WA */
-        .wa-floating {
-            position: fixed;
-            bottom: 25px;
-            right: 25px;
-            background: linear-gradient(135deg, #25d366, #128c7e);
-            color: #fff;
-            padding: 12px 22px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 0.9rem;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
-            z-index: 999;
-            transition: transform 0.3s;
-        }
+       /* Styling Utama Floating WA */
+.wa-floating {
+    position: fixed;
+    right: 25px;
+    background: linear-gradient(135deg, #25d366, #128c7e);
+    color: #fff;
+    padding: 12px 22px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+    z-index: 999;
+    transition: transform 0.3s;
+}
+
+.wa-floating:hover {
+    transform: translateY(-3px);
+}
+
+/* Posisi Tombol 1 (Pesan Owner - Atas) */
+.wa-owner {
+    bottom: 85px; 
+}
+
+/* Posisi Tombol 2 (Pesan Tim - Bawah) */
+.wa-team {
+    bottom: 25px; 
+}
 
         .wa-floating:hover {
             transform: scale(1.06);
@@ -746,9 +759,14 @@
                 <a href="#lokasi" class="nav-link"><i class="fas fa-map-marked-alt"></i> Lokasi</a>
             </nav>
 
+            <a href="https://wa.me/6285735307948" target="_blank" class="header-btn-wa">
+                <i class="fab fa-whatsapp"></i>
+                <span>Contact Person</span>
+            </a>
+
             <a href="https://wa.me/62895412370946" target="_blank" class="header-btn-wa">
                 <i class="fab fa-whatsapp"></i>
-                <span>Pesan Cepat</span>
+                <span>Contact Team</span>
             </a>
         </div>
     </header>
@@ -913,11 +931,16 @@
     </div>
 </div>
 
-    <!-- FLOATING WA BUTTON -->
-    <a href="https://wa.me/62895412370946?text=Halo%20Kedai%20Lebah%20Madu,%20saya%20ingin%20memesan..." target="_blank" class="wa-floating">
-        <i class="fab fa-whatsapp" style="font-size:1.3rem;"></i>
-        <span>Pesan WhatsApp</span>
-    </a>
+        <!-- FLOATING WA BUTTONS -->
+        <a href="https://wa.me/62895412370946?text=Halo%20Kedai%20Lebah%20Madu,%20saya%20ingin%20memesan..." target="_blank" class="wa-floating wa-owner">
+            <i class="fab fa-whatsapp" style="font-size:1.3rem;"></i>
+            <span>Contact Person</span>
+        </a>
+
+        <a href="https://wa.me/6285735307948?text=Halo%20Kedai%20Lebah%20Madu,%20saya%20ingin%20memesan..." target="_blank" class="wa-floating wa-team">
+            <i class="fab fa-whatsapp" style="font-size:1.3rem;"></i>
+            <span>Contact Team</span>
+        </a>
 
     <!-- TOAST NOTIFICATION -->
     <div class="toast-notif" id="toastNotif">
@@ -935,12 +958,11 @@
         const menuDatabase = [
             // MINUMAN
             { name: "Es Kopi Susu", category: "minuman", price: "12K", type: "Ice" },
-            { name: "Kopi Hitam", category: "minuman", price: "10K", type: "Hot" },
+            { name: "Kopi Hitam", category: "minuman", price: "6K", type: "Hot" },
             { name: "Chocho Late Milk Shake", category: "minuman", price: "13K", type: "Ice" },
             { name: "Red Velvet Milk", category: "minuman", price: "13K", type: "Ice" },
             { name: "Taro Milk", category: "minuman", price: "13K", type: "Ice" },
             { name: "Kopi Robusta Jogorogo", category: "minuman", price: "8K", type: "Hot" },
-            { name: "Kopi Tubruk Original", category: "minuman", price: "6K", type: "Hot" },
             { name: "Kopi Susu", category: "minuman", price: "7K", type: "Hot" },
             { name: "Kopi Susu V60", category: "minuman", price: "10K", type: "Hot" },
             { name: "Kopi Tubruk Kecil", category: "minuman", price: "4K", type: "Hot" },
